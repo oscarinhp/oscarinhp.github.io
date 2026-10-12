@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis XV Años - Nataly Daniela Monzón Ortiz</title>
+    
+    <!-- Fuentes Elegantes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-dark: #080808;
+            --bg-card: #121212;
+            --gold-primary: #d4af37;
+            --gold-light: #f7e7a1;
+            --gold-dark: #996515;
+            --text-light: #f0f0f0;
+            --text-muted: #aaaaaa;
+            --font-serif: 'Cinzel', serif;
+            --font-script: 'Great Vibes', cursive;
+            --font-sans: 'Montserrat', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: var(--font-sans);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 50% 10%, rgba(212, 175, 55, 0.12) 0%, transparent 70%),
+                radial-gradient(circle at 50% 90%, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+        }
+
+        /* Contenedor tipo Celular */
+        .invitation-card {
+            width: 100%;
+            max-width: 480px;
+            min-height: 100vh;
+            background-color: var(--bg-dark);
+            position: relative;
+            box-shadow: 0 0 35px rgba(0, 0, 0, 0.9), 0 0 15px rgba(212, 175, 55, 0.25);
+            border-left: 1px solid rgba(212, 175, 55, 0.3);
+            border-right: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 40px;
+        }
+
+        /* ---------------- PORTADA SOBRE PANTALLA ---------------- */
+        #cover-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 9999;
+            background: linear-gradient(135deg, #030303 0%, #151515 50%, #080808 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 25px;
+            transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+        }
+
+        .cover-box {
+            border: 2px solid var(--gold-primary);
+            padding: 45px 20px;
+            width: 90%;
+            max-width: 380px;
+            border-radius: 16px;
+            position: relative;
+            background: rgba(12, 12, 12, 0.95);
+            box-shadow: inset 0 0 25px rgba(212, 175, 55, 0.2), 0 15px 35px rgba(0,0,0,0.95);
+        }
+
+        .cover-box::before, .cover-box::after {
+            content: "❖";
+            position: absolute;
+            color: var(--gold-primary);
+            font-size: 22px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #080808;
+            padding: 0 12px;
+        }
+        .cover-box::before { top: -14px; }
+        .cover-box::after { bottom: -14px; }
+
+        .cover-subtitle {
+            font-family: var(--font-serif);
+            font-size: 0.9rem;
+            letter-spacing: 5px;
+            color: var(--gold-light);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .cover-title {
+            font-family: var(--font-script);
+            font-size: 3.8rem;
+            background: linear-gradient(45deg, #bf953f, #fcf6ba, #b38728, #fbf5b7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            line-height: 1.1;
+        }
+
+        .cover-name {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            letter-spacing: 2px;
+            color: var(--text-light);
+            margin-bottom: 35px;
+            font-weight: 600;
+        }
+
+        .btn-open {
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            color: #000000;
+            border: none;
+            padding: 16px 36px;
+            font-family: var(--font-serif);
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.5);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-open:hover, .btn-open:active {
+            transform: scale(1.06);
+            box-shadow: 0 6px 25px rgba(212, 175, 55, 0.8);
+        }
+
+        /* ---------------- BOTÓN DE MÚSICA FLOTANTE ---------------- */
+        .music-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 500;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(15, 15, 15, 0.9);
+            border: 2px solid var(--gold-primary);
+            color: var(--gold-primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.3rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+            transition: all 0.3s;
+        }
+
+        .music-btn.playing {
+            animation: spin 4s linear infinite;
+            background: var(--gold-primary);
+            color: #000000;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        /* ---------------- FLORES Y DECORACIÓN ---------------- */
+        .floral-header {
+            width: 100%;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        .floral-img {
+            width: 180px;
+            height: auto;
+            opacity: 0.9;
+            filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.3));
+        }
+
+        /* ---------------- CONTENIDO PRINCIPAL ---------------- */
+        .main-content {
+            padding: 20px 24px;
+            text-align: center;
+        }
+
+        .main-subtitle {
+            font-family: var(--font-serif);
+            font-size: 0.85rem;
+            letter-spacing: 5px;
+            color: var(--gold-primary);
+            text-transform: uppercase;
+        }
+
+        .main-title {
+            font-family: var(--font-script);
+            font-size: 4.2rem;
+            background: linear-gradient(135deg, #fef1ac, #d4af37, #996515);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 5px 0 10px 0;
+        }
+
+        .quinceanera-name {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 2px;
+            text-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .blessing-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-top: 1px solid rgba(212, 175, 55, 0.4);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+            padding: 22px 16px;
+            margin: 25px 0;
+        }
+
+        .blessing-text {
+            font-style: italic;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #dedede;
+            font-weight: 300;
+        }
+
+        .parents-box {
+            margin: 30px 0;
+        }
+
+        .section-label {
+            font-family: var(--font-serif);
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            color: var(--gold-primary);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .parents-names {
+            font-size: 1.1rem;
+            color: #ffffff;
+            font-weight: 500;
+            line-height: 1.7;
+        }
+
+        .divider-symbol {
+            color: var(--gold-primary);
+            margin: 30px 0;
+            font-size: 1.2rem;
+            letter-spacing: 8px;
+        }
+
+        /* ---------------- CONTADOR REGRESIVO ---------------- */
+        .countdown-box {
+            background: linear-gradient(180deg, #151515 0%, #1a1a1a 100%);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 14px;
+            padding: 25px 15px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+        }
+
+        .event-date {
+            font-family: var(--font-serif);
+            font-size: 1.35rem;
+            color: var(--gold-light);
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            text-transform: capitalize;
+        }
+
+        .event-time {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 22px;
+        }
+
+        .countdown-title {
+            font-family: var(--font-serif);
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            color: var(--gold-primary);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .timer-grid {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .timer-unit {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid var(--gold-dark);
+            border-radius: 8px;
+            padding: 10px 8px;
+            min-width: 68px;
+        }
+
+        .timer-number {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #ffffff;
+            display: block;
+        }
+
+        .timer-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            color: var(--gold-primary);
+            letter-spacing: 1px;
+        }
+
+        /* ---------------- TARJETAS Y BOTONES DE MAPA ---------------- */
+        .card-event {
+            background: var(--bg-card);
+            border-left: 4px solid var(--gold-primary);
+            border-radius: 0 14px 14px 0;
+            padding: 24px 20px;
+            margin: 25px 0;
+            text-align: left;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+        }
+
+        .card-header-flex {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .card-icon-circle {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--gold-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .card-heading {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            color: var(--gold-light);
+            letter-spacing: 1px;
+        }
+
+        .card-schedule {
+            font-size: 0.9rem;
+            color: var(--gold-primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .card-text {
+            font-size: 0.92rem;
+            color: #cccccc;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* BOTÓN REFORZADO */
+        .btn-gold-link {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.05));
+            border: 1.5px solid var(--gold-primary);
+            color: var(--gold-light) !important;
+            text-decoration: none !important;
+            border-radius: 8px;
+            font-family: var(--font-serif);
+            font-size: 0.9rem;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            text-align: center;
+            transition: all 0.3s;
+            box-sizing: border-box;
+        }
+
+        .btn-gold-link:hover, .btn-gold-link:active {
+            background: var(--gold-primary);
+            color: #000000 !important;
+        }
+
+        /* ---------------- REGALO Y WHATSAPP ---------------- */
+        .gift-section {
+            background: rgba(20, 20, 20, 0.95);
+            border: 1px dashed var(--gold-primary);
+            border-radius: 14px;
+            padding: 25px 20px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .gift-icon {
+            font-size: 2.2rem;
+            color: var(--gold-primary);
+            margin-bottom: 10px;
+        }
+
+        .gift-title {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--gold-light);
+            margin-bottom: 8px;
+        }
+
+        .gift-text {
+            font-size: 0.9rem;
+            color: #bbbbbb;
+            line-height: 1.5;
+        }
+
+        .btn-whatsapp-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 18px;
+            background: #25D366;
+            color: #ffffff !important;
+            text-decoration: none !important;
+            border-radius: 35px;
+            font-family: var(--font-sans);
+            font-size: 1.05rem;
+            font-weight: 700;
+            box-shadow: 0 6px 22px rgba(37, 211, 102, 0.35);
+            margin: 35px 0 20px 0;
+            transition: all 0.3s;
+            box-sizing: border-box;
+        }
+
+        .btn-whatsapp-link:hover, .btn-whatsapp-link:active {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(37, 211, 102, 0.55);
+        }
+
+        .footer-tag {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 30px;
+            letter-spacing: 2px;
+            font-family: var(--font-serif);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- REPRODUCTOR YOUTUBE OCULTO - Lana Del Rey Young and Beautiful -->
+    <!-- No usar display:none ni 1px: Chrome bloquea videos tan pequeños -->
+    <div id="yt-wrap" style="position:fixed;left:-320px;top:0;width:300px;height:200px;opacity:0.01;pointer-events:none;" aria-hidden="true">
+        <div id="yt-player"></div>
+    </div>
+
+    <!-- BOTÓN MÚSICA FLOTANTE -->
+    <button class="music-btn" id="musicToggle" onclick="toggleMusic()" title="Música">
+        <i class="fa-solid fa-music"></i>
+    </button>
+
+    <!-- PORTADA SOBRE PANTALLA -->
+    <div id="cover-screen">
+        <div class="cover-box">
+            <p class="cover-subtitle">Invitación Especial</p>
+            <h1 class="cover-title">Mis XV Años</h1>
+            <p class="cover-name">Nataly Daniela</p>
+            <button class="btn-open" onclick="openInvitation()">
+                <i class="fa-solid fa-envelope-open-text"></i> ABRIR INVITACIÓN
+            </button>
+        </div>
+    </div>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="invitation-card">
+
+        <!-- DECORACIÓN FLORAL SVG -->
+        <div class="floral-header">
+            <svg class="floral-img" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M100,10 C120,30 160,30 180,10 C160,50 120,50 100,70 C80,50 40,50 20,10 C40,30 80,30 100,10 Z" fill="url(#goldGrad)" opacity="0.85"/>
+                <circle cx="100" cy="40" r="10" fill="#121212" stroke="url(#goldGrad)" stroke-width="2"/>
+                <defs>
+                    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#f7e7a1"/>
+                        <stop offset="50%" stop-color="#d4af37"/>
+                        <stop offset="100%" stop-color="#8a6d1c"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+
+        <div class="main-content">
+
+            <!-- ENCABEZADO -->
+            <p class="main-subtitle">Te invito a celebrar</p>
+            <h1 class="main-title">Mis XV Años</h1>
+            <h2 class="quinceanera-name">Nataly Daniela<br>Monzón Ortiz</h2>
+
+            <!-- BENDICIÓN -->
+            <div class="blessing-card">
+                <p class="blessing-text">
+                    "Con la bendición de Dios y el amor que mis padres me han dado, me siento feliz de llegar a este momento de mi vida, en el que dejo atrás mi infancia y comienzo un nuevo camino."
+                </p>
+            </div>
+
+            <!-- PADRES -->
+            <div class="parents-box">
+                <p class="section-label">Con la bendición de sus padres</p>
+                <p class="parents-names">
+                    Edwin Alejandro Monzón Argueta<br>
+                    &amp;<br>
+                    Sandra Elizabeth Ortiz
+                </p>
+            </div>
+
+            <div class="divider-symbol">❖ ❖ ❖</div>
+
+            <!-- CONTADOR REGRESIVO -->
+            <div class="countdown-box">
+                <div class="event-date">Sábado, 7 de Noviembre de 2026</div>
+                <div class="event-time"><i class="fa-regular fa-clock"></i> 4:00 p. m.</div>
+
+                <p class="countdown-title">Faltan para el gran día:</p>
+                <div class="timer-grid">
+                    <div class="timer-unit">
+                        <span class="timer-number" id="days">00</span>
+                        <span class="timer-label">Días</span>
+                    </div>
+                    <div class="timer-unit">
+                        <span class="timer-number" id="hours">00</span>
+                        <span class="timer-label">Horas</span>
+                    </div>
+                    <div class="timer-unit">
+                        <span class="timer-number" id="minutes">00</span>
+                        <span class="timer-label">Min</span>
+                    </div>
+                    <div class="timer-unit">
+                        <span class="timer-number" id="seconds">00</span>
+                        <span class="timer-label">Seg</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MISA RELIGIOSA -->
+            <div class="card-event">
+                <div class="card-header-flex">
+                    <div class="card-icon-circle"><i class="fa-solid fa-church"></i></div>
+                    <h3 class="card-heading">Ceremonia Religiosa</h3>
+                </div>
+                <div class="card-schedule"><i class="fa-regular fa-clock"></i> 4:00 p. m.</div>
+                <p class="card-text">
+                    <strong>Iglesia Nuestra Señora de Guadalupe</strong><br>
+                    Colonia Villas de Oriente, Km 22.5, Ruta al Atlántico.
+                </p>
+                <a href="https://maps.app.goo.gl/XLk5dLDt1XA6DeP98" target="_blank" rel="noopener noreferrer" class="btn-gold-link">
+                    <i class="fa-solid fa-location-dot"></i> VER UBICACIÓN EN MAPS
+                </a>
+            </div>
+
+            <!-- RECEPCIÓN -->
+            <div class="card-event">
+                <div class="card-header-flex">
+                    <div class="card-icon-circle"><i class="fa-solid fa-glass-cheers"></i></div>
+                    <h3 class="card-heading">Recepción</h3>
+                </div>
+                <div class="card-schedule"><i class="fa-regular fa-clock"></i> 5:30 p. m. (Después de la Santa Misa)</div>
+                <p class="card-text">
+                    <strong>Casa Habitación</strong><br>
+                    Manzana D, Lote 33, Km 22.5, Ruta al Atlántico.
+                </p>
+                <a href="https://maps.app.goo.gl/69w7VCAuHpvn2GCb6?g_st=ac" target="_blank" rel="noopener noreferrer" class="btn-gold-link">
+                    <i class="fa-solid fa-map-pin"></i> VER RECEPCIÓN EN MAPS
+                </a>
+            </div>
+
+            <!-- REGALO -->
+            <div class="gift-section">
+                <div class="gift-icon"><i class="fa-solid fa-gift"></i></div>
+                <h3 class="gift-title">Obsequios</h3>
+                <p class="gift-text">
+                    <strong>Regalo: Opcional</strong><br>
+                    Tu presencia es nuestro mejor regalo, pero si deseas hacerme un presente, contaremos con lluvia de sobres.
+                </p>
+            </div>
+
+            <!-- BOTÓN WHATSAPP -->
+            <a href="https://api.whatsapp.com/send?phone=50236306129&text=%C2%A1Hola!%20Confirmo%20mi%20asistencia%20a%20los%20XV%20A%C3%B1os%20de%20Nataly%20Daniela.%20Mi%20nombre%20es%3A%20" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-link">
+                <i class="fa-brands fa-whatsapp" style="font-size: 1.4rem;"></i> CONFIRMAR ASISTENCIA
+            </a>
+
+            <p class="footer-tag">NATALY DANIELA • MIS XV AÑOS 2026</p>
+
+        </div>
+    </div>
+
+    <!-- YOUTUBE API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <!-- JAVASCRIPT DIRECTO -->
+    <script>
+        var ytPlayer = null;
+        var ytReady = false;
+        var pendingPlay = false;
+        var musicPlaying = false;
+        var YT_VIDEO_ID = "cKJBe0sfLN8";
+
+        function setMusicUI(playing) {
+            musicPlaying = playing;
+            var musicBtn = document.getElementById('musicToggle');
+            if (!musicBtn) return;
+            if (playing) musicBtn.classList.add('playing');
+            else musicBtn.classList.remove('playing');
+        }
+
+        function tryPlayYT() {
+            if (!ytPlayer || !ytPlayer.playVideo) {
+                pendingPlay = true;
+                return;
+            }
+            try {
+                // Truco para Chrome/iOS: primero mute, play, luego unmute con volumen
+                ytPlayer.mute();
+                ytPlayer.playVideo();
+                setTimeout(function() {
+                    try {
+                        ytPlayer.unMute();
+                        ytPlayer.setVolume(100);
+                        ytPlayer.playVideo();
+                    } catch(e) {}
+                }, 500);
+                setMusicUI(true);
+            } catch(e) {
+                console.log('Error YouTube play:', e);
+                pendingPlay = true;
+            }
+        }
+
+        function onYouTubeIframeAPIReady() {
+            ytPlayer = new YT.Player('yt-player', {
+                height: '200',
+                width: '300',
+                videoId: YT_VIDEO_ID,
+                playerVars: {
+                    'autoplay': 0,
+                    'controls': 0,
+                    'disablekb': 1,
+                    'loop': 1,
+                    'playlist': YT_VIDEO_ID,
+                    'playsinline': 1,
+                    'rel': 0,
+                    'modestbranding': 1
+                },
+                events: {
+                    'onReady': function(e) {
+                        ytReady = true;
+                        try { e.target.setVolume(100); } catch(err) {}
+                        if (pendingPlay) {
+                            pendingPlay = false;
+                            tryPlayYT();
+                        }
+                    },
+                    'onStateChange': function(e) {
+                        if (e.data === YT.PlayerState.PLAYING) setMusicUI(true);
+                        else if (e.data === YT.PlayerState.PAUSED) setMusicUI(false);
+                        else if (e.data === YT.PlayerState.CUED && pendingPlay) {
+                            pendingPlay = false;
+                            tryPlayYT();
+                        }
+                    },
+                    'onError': function(e) {
+                        console.log('YouTube error:', e.data);
+                        // Fallback: si el video bloquea la incrustación, abrir directo
+                        // Error 101/150 = no permite embed
+                        if (e.data === 101 || e.data === 150) {
+                            setMusicUI(false);
+                            var btn = document.getElementById('musicToggle');
+                            if (btn) btn.title = 'Abrir música en YouTube';
+                        }
+                    }
+                }
+            });
+        }
+
+        function openInvitation() {
+            var cover = document.getElementById('cover-screen');
+            cover.style.transform = 'translateY(-100%)';
+            cover.style.opacity = '0';
+            
+            setTimeout(function() {
+                cover.style.display = 'none';
+            }, 800);
+
+            tryPlayYT();
+            // Reintento por si el API aún no estaba listo (muy común en celular)
+            setTimeout(function() {
+                if (!musicPlaying) tryPlayYT();
+            }, 1500);
+        }
+
+        function toggleMusic() {
+            if (!ytPlayer || !ytPlayer.playVideo || !ytReady) {
+                // Si aún no carga, abrir el video directo como respaldo
+                if (!ytReady) {
+                    window.open('https://youtu.be/' + YT_VIDEO_ID, '_blank');
+                    return;
+                }
+                tryPlayYT();
+                return;
+            }
+            try {
+                var state = null;
+                try { state = ytPlayer.getPlayerState(); } catch(err) {}
+                if (state === YT.PlayerState.PLAYING) {
+                    ytPlayer.pauseVideo();
+                    setMusicUI(false);
+                } else {
+                    tryPlayYT();
+                }
+            } catch(e) {
+                console.log('Error toggle:', e);
+            }
+        }
+
+        var eventDate = new Date("November 7, 2026 16:00:00").getTime();
+        function updateCountdown() {
+            var now = new Date().getTime();
+            var distance = eventDate - now;
+
+            if (distance < 0) {
+                document.getElementById("days").innerText = "00";
+                document.getElementById("hours").innerText = "00";
+                document.getElementById("minutes").innerText = "00";
+                document.getElementById("seconds").innerText = "00";
+                return;
+            }
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
